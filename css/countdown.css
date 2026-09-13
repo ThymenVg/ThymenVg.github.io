@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+body{
+    font-family: Bungee, sans-serif;
+}   
+
+/* Slot machine styles */
+body, html {
+    height: 100%;
+    background-color: #f3ede2;
+    margin: 0;
+    /* Disable page scrolling */
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+/* Responsive digit sizing variables */
+:root {
+    --digit-min: 48px;
+    --digit-preferred: 170px;
+    --digit-max: 160px;
+    --reel-min-width: 84px;
+    --reel-padding: 8px;
+    --slot-gap: 12px;
+}
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#slot-machine {
+    display: flex;
+    gap: var(--slot-gap);
+    position: relative;
+}
+.reel {
+    min-width: var(--reel-min-width);
+    height: 120px;
+    padding: var(--reel-padding);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    position: relative;
+    box-sizing: border-box;
+}
+.digit {
+    font-size: var(--digit-preferred);
+    font-weight: 700;
+    line-height: 1;
+    width: 100%;
+    color: #3e3e3e;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 6px;
+}
+
+/* When main has .stacked, stack the slot-machine and label vertically and center them */
+main.stacked {
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Large DAYS label shown after count-up */
+.days-label {
+    padding: 6px 15px;
+    font-size: clamp(8px, 1.5vw, 18px);
+    font-weight: 800;
+    color: #ffffff;
+    background-color: #9a2207;
+    letter-spacing: 2px;
+    transform: translateY(8px);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease, transform 500ms ease, visibility 0s linear 500ms;
+}
+
+/* Small subtitle under DAYS */
+.days-sub {
+    margin-top: 30px;
+    font-size: clamp(10px, 1.2vw, 12px);
+    font-weight: 600;
+    color: #3e3e3e;
+    transform: translateY(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease, transform 500ms ease, visibility 0s linear 500ms;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+.freedom-image,
+.flag-image {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease, visibility 0s linear 500ms;
+}
+
+body:not(.countdown-loading) .days-label,
+body:not(.countdown-loading) .days-sub,
+body:not(.countdown-loading) .freedom-image,
+body:not(.countdown-loading) .flag-image {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+body.countdown-loading .days-label,
+body.countdown-loading .days-sub {
+    position: absolute;
+}
+
+.freedom-image {
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: clamp(120px, 22vw, 280px);
+    max-width: 45vw;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.flag-image {
+    position: fixed;
+    top: 120px;
+    right: -40px;
+    width: clamp(120px, 22vw, 280px);
+    max-width: 45vw;
+    height: auto;
+    transform: rotate(30deg);
+    transform-origin: top right;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@media (max-width: 700px) {
+    .digit {
+        font-size: 100px;
+    }
+    .days-label {
+        padding: 4px 12px;
+        font-size: 16px;
+        transform: translateY(0);
+    }
+
+    .days-sub {
+        max-width: 80vw;
+        margin-top: 12px;
+        font-size: 10px;
+        transform: translateY(0);
+    }
+
+    .freedom-image,
+    .flag-image {
+        width: 180px;
+        max-width: 42vw;
+    }
+
+    .flag-image {
+        top: 74px;
+        right: -30px;
+    }
+}
+
+/* Confetti pieces */
+.confetti-piece {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform, opacity;
+    z-index: 30;
+}
+
+@keyframes confetti-pop {
+    from {
+        transform: translate(0, 0) rotate(var(--start-rot, 0deg));
+        opacity: 1;
+    }
+    to {
+        transform: translate(var(--dx, 0px), var(--dy, 40px)) rotate(calc(var(--start-rot, 0deg) + var(--rot, 0deg)));
+        opacity: 0;
+    }
+}

@@ -1,0 +1,134 @@
+
+:root {
+    --background-color: #000000;
+    --text-color: #000000;
+    --text-color-highlighted: #1878d1;
+    --blur-amount: 2px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: impact;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+    color: var(--text-color);
+    overflow: hidden;
+    height: 100%;
+}
+
+a {
+    font-size: 10pt;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all .25s;
+}
+
+a:visited {
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--text-color-highlighted);
+}
+
+h1 {
+    font-size: 64pt;
+    margin: 0;
+    padding: 0;
+    transition: all .25s;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+h1:hover {
+    color: var(--text-color-highlighted);
+    letter-spacing: 2px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px; 
+    text-align: left;
+}
+    
+.sidebar a {
+    font-family: Impact;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+    
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.links {
+    text-align: center;
+}
+
+.background {
+    
+      height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: #000000;
+}
+
+#index{
+    position: absolute;
+    bottom: 75px;
+  }
+  
+  #images{
+    position: absolute;
+    bottom: 50px;
+  }
+  
+  #magic{
+    position: absolute;
+    bottom: 25px;
+  }
+  

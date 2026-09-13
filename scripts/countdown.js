@@ -92,7 +92,7 @@
 	// and animate them outward. Top corners use negative vertical movement so they pop upward.
 	function createConfettiFullBurst(container) {
 		if (!container) return;
-		const colors = ['#2b9cff', '#ff6b6b', '#ffd43b', '#4cd97b', '#9b7cff'];
+		const colors = ['#0063b9', '#cc0000', '#ffffff'];
 		// corner definitions: percentage ranges for top/left positions and a horizontal direction (dir)
 		const corners = [
 			{ topRange: [2, 10], leftRange: [2, 10], dir: -1 }, // top-left
@@ -102,7 +102,7 @@
 		];
 
 		corners.forEach(corner => {
-			const pieces = 3; // number of pieces per corner (keeps burst subtle)
+			const pieces = 30; // number of pieces per corner (keeps burst subtle)
 			for (let i = 0; i < pieces; i++) {
 				const piece = document.createElement('div');
 				piece.className = 'confetti-piece';

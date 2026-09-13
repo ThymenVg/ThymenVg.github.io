@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
+
+@keyframes text{
+      33% {
+        text-shadow: 0 60px #ff0000, 0 150px #ff9900;
+      }
+      50% {
+        transform: translate(0, 0) rotate(360deg);
+        text-shadow: 0 0px #fbff00, 0 0px #57da00;
+      }
+      66.67% {
+        text-shadow: 0 -60px #0011ff, 0 150px #ff02c8;
+      }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#text{
+    margin-left: 15px;
+    position: absolute;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: white;
+    text-decoration: underline;
+    animation-name: text;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+#red{
+    margin-left: 15px;
+    background-color: red;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#orange{
+    background-color: orange;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#yellow{
+    background-color: yellow;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#green{
+    margin-left: 15px;
+    background-color: lime;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#blue{
+    background-color: rgb(0, 64, 255);
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#violet{
+    background-color: violet;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#black{
+    margin-left: 35px;
+    background-color: #29292b;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#white{
+    background-color: white;
+    outline: rgb(0, 0, 0) solid 5px;
+}
+
+#gradient{
+    position: absolute;
+    width: 87%;
+    height: 60%;
+    font-size: 36px;
+    left: 173px;
+    font-weight: bold;
+    font-family: 'josefin' sans-serif;
+    background-image: linear-gradient( to bottom right, rgb(236, 131, 236) , rgb(19, 62, 155));
+    border: solid 10px black;
+}
+
+#particles-js {
+    z-index: -1;
+    border: solid 10px black;
+}
+
+
+

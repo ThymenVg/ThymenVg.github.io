@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/magic.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="scripts/script.js" defer></script>
+    <title>Magic</title>
+</head>
+<body>   
+    <div class="sidebar">
+        <text id="text">🌟magic🌟</text>
+        <br><br>
+        <input type="button" id="red" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'red';">
+        <input type="button" id="orange" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'orange';">
+        <input type="button" id="yellow" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'yellow';">
+        <input type="button" id="green" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'lime';">
+        <input type="button" id="blue" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'rgb(0, 64, 255)'    ;">
+        <input type="button" id="violet" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'violet';">
+        <input type="button" id="black" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = '#29292b';">    
+        <input type="button" id="white" value="     " style="z-index: 3000;" onclick="document.body.style.backgroundColor = 'white';">
+        <br>
+        <a href="#particles-js">particles</a>
+        <a href="#gradient">gradient</a>
+        <a href="socials.html">socials</a>
+        <a href="webgl.html">game</a>
+        <a href="index.html" id="index">>>Index</a>
+        <a href="images.html" id="images">>>Images</a>
+        <a href="magic.html" id="magic">>>Magic</a>
+      </div> <!--ik wist niet of het magic gedeelde moest relateren met de thema dus ik begrijp dat ik er punten mee ga verliezen maar toch hebk mijn bestt gedaan om er iets zowat interactief van te maken want sander zijn magic heeft wel temaken me zijn thema daardoor-->
+    <h1 id="title">Magic</h1>
+        <div id="particles-js">
+               <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+               </div>
+               <script>
+                 particlesJS.load('particles-js', '/scripts/particlesjs-config.json', function(){
+                 console.log('particles.json loaded');
+                   });
+             </script>      
+        </div>
+        <br>
+        <input type="button" id="gradient" value="Click to generate a random gradient!">
+        <br><br>
+</body>
+</html>

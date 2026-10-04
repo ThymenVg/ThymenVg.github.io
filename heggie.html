@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#202321" />
+    <title>Sister Heggie</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: #202321;
+        color: #fffaf0;
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      }
+
+      .backdrop {
+        position: fixed;
+        inset: -20px;
+        width: calc(100% + 40px);
+        height: calc(100% + 40px);
+        object-fit: cover;
+        filter: blur(24px) brightness(0.28) saturate(0.8);
+        transform: scale(1.05);
+      }
+
+      .portrait {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: saturate(1.12) contrast(1.04);
+      }
+
+      .portrait-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(100vw, 75svh);
+        aspect-ratio: 3 / 4;
+        animation: photo-boing 3.4s ease-in-out infinite;
+      }
+
+      .sticker {
+        position: absolute;
+        z-index: 1;
+        font-size: clamp(2rem, 6vw, 4.5rem);
+        line-height: 1;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.25));
+        animation: sticker-wiggle 1.3s ease-in-out infinite alternate;
+      }
+
+      .sticker-star {
+        top: 26%;
+        left: 8%;
+      }
+
+      .sticker-sparkle {
+        top: 42%;
+        right: 7%;
+        animation-delay: -0.6s;
+      }
+
+      .sticker-duck {
+        right: 12%;
+        bottom: 20%;
+        animation-delay: -0.3s;
+      }
+
+      @keyframes photo-boing {
+        0%, 100% {
+          transform: translate(-50%, -50%) rotate(-1.5deg) scale(0.98);
+        }
+        25% {
+          transform: translate(-50%, -51%) rotate(1.8deg) scale(1.015);
+        }
+        50% {
+          transform: translate(-50%, -49%) rotate(-1deg) scale(1.03);
+        }
+        75% {
+          transform: translate(-50%, -50%) rotate(1.3deg) scale(0.99);
+        }
+      }
+
+      @keyframes sticker-wiggle {
+        from {
+          transform: rotate(-14deg) scale(0.9);
+        }
+        to {
+          transform: rotate(16deg) scale(1.12);
+        }
+      }
+
+      .shade {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 55% 48%, transparent 20%, rgba(24, 15, 12, 0.18) 100%),
+          linear-gradient(180deg, rgba(20, 15, 13, 0.24), transparent 26%, transparent 56%, rgba(20, 15, 13, 0.72));
+        pointer-events: none;
+      }
+
+      .name,
+      .caption {
+        position: absolute;
+        z-index: 1;
+        left: clamp(1.25rem, 5vw, 4rem);
+        margin: 0;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+      }
+
+      .name {
+        top: clamp(1.25rem, 5vh, 3rem);
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #fff3d9;
+      }
+
+      .caption {
+        bottom: clamp(2rem, 8vh, 5rem);
+        max-width: 34rem;
+        font-size: clamp(1.8rem, 5vw, 4.5rem);
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      .caption span {
+        display: block;
+        margin-top: 0.8rem;
+        font-size: clamp(0.9rem, 1.7vw, 1.2rem);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.4;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .portrait-frame,
+        .sticker {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img class="backdrop" src="images/sister-heggie.png" alt="" aria-hidden="true" />
+    <div class="portrait-frame">
+      <img
+        class="portrait"
+        src="images/sister-heggie.png"
+        alt="Sister Heggie enjoying a sunny day in Ghent"
+      />
+      <span class="sticker sticker-star" aria-hidden="true">⭐</span>
+      <span class="sticker sticker-sparkle" aria-hidden="true">✨</span>
+      <span class="sticker sticker-duck" aria-hidden="true">🐱</span>
+    </div>
+    <div class="shade" aria-hidden="true"></div>
+    <p class="name">Sister Heggie</p>
+
+  </body>
+</html>
